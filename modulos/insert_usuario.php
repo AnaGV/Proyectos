@@ -13,13 +13,6 @@
 	$priod = $_POST["prd"];									
 	$id_user = $_POST["l_user_i"];
 
-    // //Selecciona los datos de usuario si existen 
-    // $query = pg_query ($conexion, "SELECT * FROM ".'"CALLCENTER"'.".usuarios a
-    // 									where a.id_usuario=".$id_user." ")                                                                            
-    // or die ("Error en la consulta 1");
-    // $tam = 0;
-    // $tam = pg_num_rows($query);
-
 	if($id_user!=null)
 	{
 		//Realiza el query para actualizar los datos.. 
