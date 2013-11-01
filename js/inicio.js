@@ -32,10 +32,10 @@ function guardar_usuario()
 		$.post("insert_usuario.php",{nomb:nombre.value,ap:apellido.value,
 									ema:mail.value,oper:operador.value,
 									tf:tlf.value,prd:prioridad.value, l_user_i:l_user},
-		function (respuesta) {})
+		function (respuesta) {})			
 	}
 	else
-	{alert("Por ahi falta algo chama");}
+	{alert("Falta rellenar un campo.");}
 }
 
 function  mostrar_lista_user()
@@ -54,4 +54,40 @@ function  ocultar_lista_user(id,nombre,apellido,mail,tlf,n_user,prid)
 	$("#agregar_user_tlf").val(tlf);
 	$("#agregar_user_prioridad").val(prid);
 	$("#guardar_nuevo_user").html('ACTUALIZAR <i class="fa fa-pencil-square"></i>');
+}
+
+function validarEmail() 
+{	
+	valor = $("#agregar_user_email").val();
+	
+	if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,4})+$/.test(valor)){
+		return true;
+	} 
+	else {
+		alert("Debe ingresar un e-mail válido.");
+	}
+}
+
+
+function  validaTelefono(e)
+{
+   key = e.keyCode || e.which;
+   tecla = String.fromCharCode(key).toLowerCase();
+   letras = "0123456789";
+   especiales = [8,32];
+	
+   tecla_especial = false;
+   for(var i in especiales){
+		if(key == especiales[i]){
+			tecla_especial = true;			
+			break;
+		}
+	}
+	if(letras.indexOf(tecla)==-1 && !tecla_especial){return false;}
+	
+	var tlf = $("#agregar_user_tlf").val();
+	
+	if(tecla_especial && tlf.indexOf(tecla)!=-1 && key!=8 ){return false;}		
+	
+	if(tlf.length>10 && key!=8){return false;}
 }

@@ -18,7 +18,6 @@
             <div>
                 <ul id="lista_user">
                     <?while( $array_user= pg_fetch_assoc($query)){?>
-                        <input type="hidden" id="">
                         <li Onclick="ocultar_lista_user('<?echo $array_user['id_usuario'];?>','<?echo $array_user['nombre'];?>','<?echo $array_user['apellido'];?>','<?echo $array_user['email'];?>','<?echo $array_user['telefono1'];?>','<?echo $array_user['nombre_usuario'];?>','<?echo $array_user['prioridad'];?>');">
                             <a href="#"><?echo $array_user['useer'];?></a>
                         </li><br>                       
@@ -30,9 +29,9 @@
 
         <input class="input_valido" id="agregar_user_nombre"    size="15" type="text" placeholder="Nombres"/>
         <input class="input_valido" id="agregar_user_apellido"  size="15" type="text" placeholder="Apellidos"/>
-        <input type="email" name="email" required class="input_valido" id="agregar_user_email"     size="15" placeholder="E-mail"/>
+        <input type="email" name="email" class="input_valido"   id="agregar_user_email" size="15" placeholder="E-mail" required onChange='validarEmail();' />
         <input class="input_valido" id="agregar_user_operador"  size="15" type="text" placeholder="Nombre de Operador"/>
-        <input class="input_valido" id="agregar_user_tlf"       size="15" type="text" placeholder="Telefono"/>
+        <input class="input_valido" id="agregar_user_tlf"       size="15" type="text" placeholder="Teléfono" onkeyPress='return validaTelefono(event);'/>
         
         <select id="agregar_user_prioridad" style="width:130px" Onchange="prioridad();">
             <option value="0" selected>Prioridad</option>

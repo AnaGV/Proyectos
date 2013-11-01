@@ -6,13 +6,11 @@
         header("Location: index.php");
 ?>
 
-
 <!DOCTYPE html>
 
 <html Lang="es">
 
     <head>
-
         <meta charset="utf-8" />
         <title>Call Center - Inicio</title>    
         <link rel="stylesheet" href="../css/estilo.css">
@@ -20,9 +18,6 @@
         <link rel="stylesheet" href="../css/font-awesome.css">
         <link rel="stylesheet" href="../css/font-awesome.min.css">
         <link rel="icon" type="image/png" href="images/.png" />
-
-        <script type="text/javascript" src="../js/jquery-2.0.3.min.js"></script>
-        <script type="text/javascript" src="../js/inicio.js"></script>
     </head>
 
     <body>
@@ -186,5 +181,9 @@
             <footer>
             </footer>  
         </div>
+
+        <script type="text/javascript" src="../js/jquery-2.0.3.min.js"></script>
+        <script type="text/javascript" src="../js/jquery.validate.js"></script>                
+        <script type="text/javascript" src="../js/inicio.js"></script>
     </body>
 </html>
